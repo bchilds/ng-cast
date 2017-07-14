@@ -8,7 +8,7 @@ angular.module('video-player')
   
   controller: function($scope) {
     $scope.videos = window.exampleVideoData;
-    $scope.currentVideo = window.exampleVideoData;
+    $scope.cvid = window.exampleVideoData[0];
     console.log('app level scope', $scope);
     this.onClick = function() {
       console.log('app onClick', this);

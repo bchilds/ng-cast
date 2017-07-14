@@ -1,10 +1,11 @@
 <div class="video-player">
-  <div class="embed-responsive embed-responsive-16by9">
-    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/1w8Z0UOXVaY" allowFullScreen></iframe>
+  <!-- 'Please wait' -->
+  <div class="embed-responsive embed-responsive-16by9" >Please wait
+    <iframe class="embed-responsive-item" ng-if="$ctrl.video" 
+      ng-src="{{getIframeSource($ctrl.video.id.videoId)}}" allowFullScreen></iframe>
   </div>
   <div class="video-player-details">
-    <h3>{{$ctrl.current-video.snippet.title}}</h3>
-    <div>{{$ctrl.current-video.snippet.description}}</div>
+    <h3>{{$ctrl.video.snippet.title}}</h3>
+    <div>{{$ctrl.video.snippet.description}}</div>
   </div>
 </div>
-<!-- ng-src="{{$ctrl.video.id.videoId}}" -->
