@@ -9,9 +9,9 @@ angular.module('video-player')
   },
   
   controller: function($scope) {
-    console.log('videoList level scope:', $scope);
+    //console.log('videoList level scope:', $scope);
     this.onClick = function(index) {
-      console.log('videos[index]: ', this.videos[index]);
+      //console.log('videos[index]: ', this.videos[index]);
       this.selectVideo(this.videos[index]);
     };
   }, 

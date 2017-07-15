@@ -3,15 +3,20 @@ angular.module('video-player')
 .component('search', {
   templateUrl: 'src/templates/search.html',
   
-  controller: function ($scope, youTube) {
-
-    this.result = function() {
-      console.log('Search results: ');
-    };
+  bindings: {
+    searchClick: '=',
+  },
   
-    // this.$onInit = function () {
-    //   console.log(youTube.search(undefined, function() {}));
-    // };
+  controller: function ($scope, youTube) {
+    console.log('Search scope: ', $scope, this);
+    this.result = function(results) {
+      console.log('this.result: ', results);
+      this.searchClick(results);
+    }.bind(this);
+    
+    this.search = function() {
+      youTube.search($scope.userSearch, this.result);
+    };
   }, //scope
   
 });

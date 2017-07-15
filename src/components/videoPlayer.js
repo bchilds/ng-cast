@@ -9,7 +9,7 @@ angular.module('video-player')
     $scope.getIframeSource = function(videoId) {
       return 'https://www.youtube.com/embed/' + videoId;
     };
-    console.log('videoPlayer scope', $scope);
+    //console.log('videoPlayer scope', $scope);
   },
   
 });

@@ -7,7 +7,7 @@ angular.module('video-player')
   },
   
   controller: function($scope) {
-    console.log('videolistentry scope', $scope);
+    //console.log('videolistentry scope', $scope);
   },
   
 });

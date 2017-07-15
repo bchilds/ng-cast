@@ -7,7 +7,6 @@ angular.module('video-player')
       //url: 'https://www.googleapis.com/youtube/v3/search',
       key: window.YOUTUBE_API_KEY,
       part: 'snippet',
-      
       q: query || 'SeaNanners',
       maxResults: 5,
       type: 'video',
@@ -22,7 +21,7 @@ angular.module('video-player')
     .then(function successCallback(response) {
       // this callback will be called asynchronously
       // when the response is available
-      
+      console.log('Response: ', response);
       callback(response.data.items);
       
       //console.log('response: ', response);
