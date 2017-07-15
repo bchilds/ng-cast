@@ -9,10 +9,11 @@ angular.module('video-player')
     this.videos = window.exampleVideoData;
     this.currentVideo = window.exampleVideoData[0];
     this.onClick = function() {
-      console.log('app onClick', this);
-    };
+      console.log('app onClick', $scope);
+    }.bind(this);
     this.selectVideo = function () {
-      
+      console.log('onClick context: ', video);
+      this.currentVideo = video;
     };
     
     this.searchResults = function () {
