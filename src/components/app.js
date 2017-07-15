@@ -4,21 +4,22 @@ angular.module('video-player')
   templateUrl: 'src/templates/app.html',
   bindings: {
   },
-  controller: function($scope) {
+  controller: function($scope, youTube) {
     console.log('app level scope', $scope);
     this.videos = window.exampleVideoData;
     this.currentVideo = window.exampleVideoData[0];
-    this.onClick = function() {
-      console.log('app onClick', $scope);
-    }.bind(this);
-    this.selectVideo = function () {
-      console.log('onClick context: ', video);
+    this.selectVideo = function (video) {
+      console.log('select video\'s video: ', video);
       this.currentVideo = video;
-    };
+    }.bind(this);
     
     this.searchResults = function () {
       
-    };
+    }.bind(this);
     
+    //runs search on app init
+    this.$onInit = function() {
+      youTube.search(undefined, function() {});
+    };
   }
 });
